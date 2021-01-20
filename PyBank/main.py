@@ -49,5 +49,19 @@ for row in csv_reader:
     average_month = ((sum(change))/(len(change)))
     print(f"Average Change: ${round((average_month), 2)}")
 
+#greatest increase and decrease in profits 
+    max_change = max(change)
+    print(f"${max_change}")
+
+    min_change = min(change)
+    print(f"${min_change")
+
+    max_change = max(change)
+    print(f"Greatest Increase in Profits: ${max_change}")
+
+    min_change = min(change)
+    print(f"Greatest Decrese in Profits: ${min_change}")
+
+
 
 
