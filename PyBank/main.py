@@ -1,14 +1,16 @@
 import os
 import csv
 
-csvpath = os.path.join('..', 'Resources', 'budget_data.csv')
+
+
+csvpath = os.path.join("Resources", "budget_data.csv")
 #Open and read csv
 with open(csvpath) as csvfile:
-    csvreader =csv.reader(csvfile, delimiter=",")
-    print(csvreader)
+    csv_reader =csv.reader(csvfile, delimiter=",")
+    print(csv_reader)
 
     #Read the header row first 
-    csv_header = next(csvreader)
+    csv_header = next(csv_reader)
     print(f"Header: {csv_header}")
 
 #Create lists to store months and profit 
@@ -16,7 +18,7 @@ with open(csvpath) as csvfile:
 #profit = []
 #Read through each row of data after the header 
 for row in csv_reader: 
-    print(csvreader)
+    print(csv_reader)
     
     #months.append(row[1])
     #profit.append(int(row[1]))
