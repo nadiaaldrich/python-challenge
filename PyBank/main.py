@@ -2,7 +2,6 @@ import os
 import csv
 
 
-
 csvpath = os.path.join("Resources", "budget_data.csv")
 #Open and read csv
 with open(csvpath) as csvfile:
@@ -14,32 +13,41 @@ with open(csvpath) as csvfile:
     print(f"Header: {csv_header}")
 
 #Create lists to store months and profit 
-#months = []
-#profit = []
+months = []
+profit = []
+
 #Read through each row of data after the header 
 for row in csv_reader: 
     print(csv_reader)
     
-    #months.append(row[1])
-    #profit.append(int(row[1]))
+    months.append(row[1])
+    profit.append(int(row[1]))
 
-    #total_months = len(months)
-    #print (f"Total Months: {total_months}")
+    total_months = len(months)
+    print (f"Total Months: {total_months}")
 
-    #revenues = 0
-    #i = 1
-   #for i in range(total):
-        #revenues = revenues + int(profit[i])
-    #print(f"Total: ${revenues}")
+    #add to get revenues
+    revenues = 0
+    i = 1
+   for i in range(total):
+        revenues = revenues + int(profit[i])
+    print(f"Total: ${revenues}")
 
-    #average_change = []
-    #j = 0
-    #k = 0
+    #find average change
+    average_change = []
+    j = 0
+    k = 0
 
-    #for j in range (1, total_months):
-        #if j == 0:
-            #change.append(int(profit[j])-int(profit[k]))
-            #k += 1
+    for j in range (1, total_months):
+        if j == 0:
+            change.append(0)
+        else:
+            change.append(int(profit[j])-int(profit[k]))
+            k += 1
+
+    #add monthly changes and divide by total months 
+    average_month = ((sum(change))/(len(change)))
+    print(f"Average Change: ${round((average_month), 2)}")
 
 
 
