@@ -17,7 +17,9 @@ with open(csvpath, newline="") as csvfile:
 #Create lists to store months and profit 
     months = []
     profit = []
-
+    
+    print(f"Financial Analysis")
+    print(f"----------------------------------------")
 #Read through each row of data after the header 
     for row in csv_reader: 
     
@@ -65,9 +67,16 @@ with open(csvpath, newline="") as csvfile:
     min_change = min(change)
     print(f"Greatest Decrease in Profits: ${min_change}")
 
+
+
+
+
+
+
 exportpath = "Results.txt"
 with open(exportpath, "w") as textfile:
-       
+        textfile.write(f"Financial Analysis")
+        textfile.write(f"----------------------------------------")
         textfile.write(f"Total Months: {total_months} ")
         textfile.write(f"Total: ${revenues}")
         textfile.write(f"Average Change: ${round((average_month), 2)}")
