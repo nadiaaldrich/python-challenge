@@ -75,13 +75,13 @@ with open(csvpath, newline="") as csvfile:
 
 exportpath = "Results.txt"
 with open(exportpath, "w") as textfile:
-        textfile.write(f"Financial Analysis")
-        textfile.write(f"----------------------------------------")
-        textfile.write(f"Total Months: {total_months} ")
-        textfile.write(f"Total: ${revenues}")
-        textfile.write(f"Average Change: ${round((average_month), 2)}")
-        textfile.write(f"Greatest Increase in Profits: ${max_change}")
-        textfile.write(f"Greatest Decrease in Revenues: ${min_change}")
+        textfile.write(f"\nFinancial Analysis")
+        textfile.write(f"\n----------------------------------------")
+        textfile.write(f"\nTotal Months: {total_months} ")
+        textfile.write(f"\nTotal: ${revenues}")
+        textfile.write(f"\nAverage Change: ${round((average_month), 2)}")
+        textfile.write(f"\nGreatest Increase in Profits: ${max_change}")
+        textfile.write(f"\nGreatest Decrease in Revenues: ${min_change}")
 
 
 
