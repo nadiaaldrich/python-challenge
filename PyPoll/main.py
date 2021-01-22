@@ -6,7 +6,7 @@ csvpath = os.path.join("Resources/election_data.csv")
 
 #Open and read csv
 with open(csvpath, newline="")as csvfile:
-    csv_reader = (csvfile, delimiter=",")
+    csv_reader = csv.reader(csvfile, delimiter=",")
 
     #Read and skip the header (first row)
     csv_header = next(csv_reader, None)
@@ -15,7 +15,7 @@ with open(csvpath, newline="")as csvfile:
 
 
     #Create lists and variable 
-    candite_list = []
+    candidate_list = []
     count_votes = 0
 
     print(f"Election Results")
@@ -26,7 +26,7 @@ with open(csvpath, newline="")as csvfile:
 
         if row[2] not in candidate_list:
             count_votes += 1
-            candite_list.append(row[2])
+            candidate_list.append(row[2])
         else:
             count_votes += 1
     
@@ -38,8 +38,8 @@ with open(csvpath, newline="")as csvfile:
         if row[2]==candidate_list[i]:
             candidate_votes[i]+=1
 
-    max_vote = max(candidate_votes)
-    vote_index = candidate_votes.index(most_vote)
+    max_votes = max(candidate_votes)
+    vote_index = candidate_votes.index(max_votes)
     winner = candidate_list[vote_index]
 
     #Percentage breakdown for each candidate
@@ -49,6 +49,14 @@ with open(csvpath, newline="")as csvfile:
 
     for j in range(total_candidates):
         percent = round(candidate_votes[j]/count_votes * 100, 2)
-        percent_of_ votes.append(percent)
+        percent_of_votes.append(percent)
+
+    print(f"Total Votes:{count_votes}")
+    print("----------------------------------------")
+    print(f"Name:{candidate_list}{percent_of_votes}, {candidate_votes}")
+    print("----------------------------------------")
+    print(f"Winner:{winner}")
+
     
     
+
