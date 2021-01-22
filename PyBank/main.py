@@ -3,16 +3,16 @@ import csv
 
 
 csvpath = os.path.join("Resources/budget_data.csv")
+
 #Open and read csv
 with open(csvpath, newline="") as csvfile:
     csv_reader =csv.reader(csvfile, delimiter=",")
     
 
-    #Read the header row first 
+    #Read and skip the header (first row) 
     csv_header = next(csv_reader, None)
     
-#with open (csvpath, 'r') as csv_reader:
-    #lines = csv_reader.read()
+
 
 #Create lists to store months and profit 
     months = []
@@ -20,6 +20,7 @@ with open(csvpath, newline="") as csvfile:
     
     print(f"Financial Analysis")
     print(f"----------------------------------------")
+
 #Read through each row of data after the header 
     for row in csv_reader: 
     
@@ -72,7 +73,6 @@ with open(csvpath, newline="") as csvfile:
 
 
 
-
 exportpath = "Results.txt"
 with open(exportpath, "w") as textfile:
         textfile.write(f"\nFinancial Analysis")
@@ -85,3 +85,4 @@ with open(exportpath, "w") as textfile:
 
 
 
+Shortcut
