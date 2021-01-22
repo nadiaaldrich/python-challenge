@@ -63,12 +63,12 @@ print(f"Winner: {winner}")
 exportpath=("Results.txt")
 with open (exportpath, "w") as textfile:
     textfile.write("Election Results")
-    textfile.write(dashes)
-    textfile.write(f"Total Votes: {count_votes}")
-    textfile.write(dashes)
-    textfile.write(f"{candidate_list}, {percent_of_votes}, {candidate_votes}")
-    textfile.write(dashes)
-    textfile.write(f"Winner:{winner}")
+    textfile.write("\n-------------------------")
+    textfile.write(f"\nTotal Votes: {count_votes}")
+    textfile.write("\n-------------------------")
+    textfile.write(f"\n{candidate_list}, {percent_of_votes}, {candidate_votes}")
+    textfile.write("\n-------------------------")
+    textfile.write(f"\nWinner:{winner}")
 
 
   
