@@ -51,9 +51,17 @@ with open(csvpath, newline="")as csvfile:
         percent = round((candidate_votes[j]/count_votes)* 100, 2)
         percent_of_votes.append(percent)
         
+dashes = "-------------------------"
+print("Election Results")
+print(dashes)
+print(f"Total Votes: {count_votes}")
+print(dashes)
+print(f"{candidate_list}, {percent_of_votes}, {candidate_votes}")
+print(dashes)
+print(f"Winner: {winner}")
 
-    print(f"Total Votes:{count_votes}")
-    print("----------------------------------------")
-    print(f"Name:{candidate_list}{percent_of_votes}, {candidate_votes}")
-    print("----------------------------------------")
-    print(f"Winner:{winner}")
+
+
+
+  
+    
