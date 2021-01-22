@@ -19,7 +19,7 @@ with open(csvpath, newline="")as csvfile:
     candidate_list = []
     count_votes = 0
 
-    print(f"Election Results")
+    
     
     for row in csv_reader:
 
@@ -60,7 +60,15 @@ print(f"{candidate_list}, {percent_of_votes}, {candidate_votes}")
 print(dashes)
 print(f"Winner: {winner}")
 
-
+exportpath=("Results.txt")
+with open (exportpath, "w") as textfile:
+    textfile.write("Election Results")
+    textfile.write(dashes)
+    textfile.write(f"Total Votes: {count_votes}")
+    textfile.write(dashes)
+    textfile.write(f"{candidate_list}, {percent_of_votes}, {candidate_votes}")
+    textfile.write(dashes)
+    textfile.write(f"Winner:{winner}")
 
 
   
